@@ -1,5 +1,5 @@
 begin
-  gem 'redis', '~> 3'
+  gem 'redis', '~> 4'
 rescue Gem::LoadError => e
   Wrest.logger.debug "Redis ~> 3 not found. The Redis gem is necessary to use redis as a caching back-end."
   raise e
@@ -28,7 +28,7 @@ module Wrest::Caching
         @redis.expire(key, response.freshness_lifetime)
       end
     end
-    
+
     def delete(key)
       value = self[key]
       @redis.del(key)

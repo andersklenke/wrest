@@ -19,3 +19,5 @@ RSpec.configure do |config|
     config.filter_run_excluding :functional => true
   end
 end
+
+RSpec::Expectations.configuration.on_potential_false_positives = :nothing
