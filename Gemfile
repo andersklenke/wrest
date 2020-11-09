@@ -6,7 +6,7 @@ gem 'rdoc', '~> 6.2.1'
 gem 'simplecov', :platforms => :mri_19
 
 group :multipart_support do
-  gem 'multipart-post'
+  gem 'multipart-post',  '>= 2.0', '< 3.0'
 end
 
 group :nokogiri do
