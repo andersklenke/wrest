@@ -1,7 +1,7 @@
 begin
   gem 'redis', '~> 4'
 rescue Gem::LoadError => e
-  Wrest.logger.debug "Redis ~> 3 not found. The Redis gem is necessary to use redis as a caching back-end."
+  Wrest.logger.debug "Redis ~> 4 not found. The Redis gem is necessary to use redis as a caching back-end."
   raise e
 end
 
