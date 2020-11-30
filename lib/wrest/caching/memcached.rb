@@ -15,20 +15,35 @@ module Wrest::Caching
     end
 
     def [](key)
-      @memcached.get(key)
+      begin
+        @memcached.get(key)
+      rescue Dalli::DalliError => e
+        Wrest.logger.error "Error reading #{key} from cache: #{e.inspect}"
+        return nil
+      end
     end
 
     def []=(key, value)
-      @memcached.set(key, value)
+      begin
+        @memcached.set(key, value)
+      rescue Dalli::DalliError => e
+        Wrest.logger.error "Error writing #{key} to cache: #{e.inspect}"
+        return nil
+      end
     end
 
     # should be compatible with Hash - return value of the deleted element.
     def delete(key)
-      value = self[key]
-      
-      @memcached.delete key
+      begin
+        value = self[key]
 
-      return value
+        @memcached.delete key
+
+        return value
+      rescue Dalli::DalliError => e
+        Wrest.logger.error "Error deleting #{key} from cache: #{e.inspect}"
+        return nil
+      end
     end
   end
 end
