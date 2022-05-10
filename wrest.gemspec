@@ -27,14 +27,14 @@ Gem::Specification.new do |s|
   s.require_path      = 'lib'
 
   # Test dependencies
-  s.add_development_dependency "rspec", ["~> 3.3"]
-  s.add_development_dependency "sinatra", ["~> 1.0.0"]
+  s.add_development_dependency "rspec", ["~> 3.9"]
+  s.add_development_dependency "sinatra", ["~> 2.1.0"]
 
-  s.add_runtime_dependency "activesupport", ['>=4', '< 6']
+  s.add_runtime_dependency "activesupport", ['>=4', '< 7']
   s.add_runtime_dependency "builder", ["> 2.0"]
-  s.add_runtime_dependency "multi_json", ["~> 1.0"]
-  s.add_runtime_dependency "concurrent-ruby", ["~> 1.0"]
-  s.add_runtime_dependency "json", ["~> 2.0"]
+  s.add_runtime_dependency "multi_json", ["~> 1.15"]
+  s.add_runtime_dependency "concurrent-ruby", ["~> 1.1"]
+  s.add_runtime_dependency "json", ["~> 2.3"]
 
   case RUBY_PLATFORM
   when /java/

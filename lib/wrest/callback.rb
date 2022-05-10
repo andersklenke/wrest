@@ -37,7 +37,7 @@ module Wrest
         callback_list.each {|callback| callback.call(response)} if case code
         when Range
           code.include?(response.code.to_i)
-        when Fixnum
+        when Integer
           code == response.code.to_i
         end
       end
