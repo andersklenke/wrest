@@ -1,5 +1,5 @@
 begin
-  gem 'dalli', '~> 2'
+  gem 'dalli', '3.2.1'
 rescue Gem::LoadError => e
   Wrest.logger.debug "Dalli ~> 2 not found. The Dalli gem is necessary to use the memcached caching back-end."
   raise e
