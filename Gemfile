@@ -20,7 +20,7 @@ group :libxml do
 end
 
 group :memcached_support do
-  gem 'dalli', '~> 2'
+  gem 'dalli', '>=2', '<=3.2.2'
 end
 
 group :redis_support do
